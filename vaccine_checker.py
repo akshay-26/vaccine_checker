@@ -57,7 +57,7 @@ def check_availability(code, vaccine_center_list):
                         session['vaccine'],
                         center['name'],
                         center['address']))
-                    if(session['available_capacity'] > 10):
+                    if(session['available_capacity'] > 1):
                         callme('We have found {} {} vaccine available at {}, {}, {}'.format(
                             session['available_capacity'],
                             session['vaccine'],
@@ -73,6 +73,12 @@ def callme(message):
         client.messages.create(
             body=message,
             to=phone_number_to_call,
+            from_=account_phone_number            
+        )
+        client1 = Client(account_sid, auth_token)
+        client1.messages.create(
+            body=message,
+            to='+918277337295',
             from_=account_phone_number
         )
     else:
