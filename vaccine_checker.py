@@ -48,7 +48,7 @@ def check_availability(code, vaccine_center_list):
     for center in vaccine_center_list['centers']:
         if 'sessions' in center:
             for session in center['sessions']:
-                if(session['available_capacity'] > 0 and session['min_age_limit'] >= 45):
+                if(session['available_capacity'] > 0 and session['min_age_limit'] < 45):
                     print('{} Yeppi vaccine available :) for {}. Search code: {}, {}, {}, {}, {}'.format(
                         datetime.now().strftime("%m/%d/%Y, %H:%M:%S"),
                         session['date'],
