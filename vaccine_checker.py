@@ -6,7 +6,7 @@ import re
 from twilio.rest import Client
 
 account_sid = 'ACe8bfebd12cb777d971390c9b61d55d8c'
-auth_token = 'ea9dd15ccd128391f95ff165d42c2c78'
+auth_token = 'ad2801c6b240be48367ebfd69a70941f'
 account_phone_number = '+14153197684'
 phone_number_to_call = '+919480798822'
 
@@ -86,7 +86,7 @@ def callme(message):
 
 
 #check_vaccine_availability()
-schedule.every(15).seconds.do(check_vaccine_availability)
+schedule.every(120).seconds.do(check_vaccine_availability)
 print('Vaccine monitoring started.')
 while True:
     schedule.run_pending()
